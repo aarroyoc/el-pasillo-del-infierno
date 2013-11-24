@@ -3,23 +3,30 @@
 <head>
 	<meta charset="utf-8">
 	<title>El Pasillo del Infierno</title>
+	<script src="libs/three.js"></script>
+	<script src="libs/physi.js"></script>
+	<style>
+	body{
+		position: relative;
+		text-align: center;
+	}
+	#main{
+		position: absolute;
+	}
+	#MessageBox{
+		position: absolute;
+		text-align: center;
+		margin-top: 40%;
+		width: 100%;
+		color: white;
+		font-size: 20px;
+		background-color: black;
+	}
+	</style>
 </head>
 <body>
 	<article id="main"></article>
-	<script>
-	(function() {
-		var three = document.createElement('script'); three.type = 'text/javascript'; three.async = true;
-		three.src = "libs/three.js";
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(three);
-	})();
-	</script>
-	<script>
-	(function() {
-		var physi = document.createElement('script'); physi.type = 'text/javascript'; physi.async = true;
-		physi.src = "libs/physi.js";
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(physi);
-	})();
-	</script>
+	<p id="MessageBox"></p>
 	<script data-main="js/main" src="libs/require.js"></script>
 </body>
 </html>
