@@ -1,0 +1,16 @@
+body{
+	text-align: center;
+	background-image: url();
+}
+.button{
+	border-style: ridge;
+	border-width: 4px;
+	border-color: orange;
+	background-color: orange;
+	border-radius: 25px;
+	margin-left: 40%;
+	margin-right: 40%;
+}
+.button a{
+	margin: 10% 10% 10% 10%;
+}
