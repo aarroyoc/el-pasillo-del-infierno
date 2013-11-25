@@ -12,5 +12,5 @@ requirejs(["three"],function(three){
 	three.start();
 });
 requirejs(["msg"],function(msg){
-	msg.send("Adrianix");
+	msg.notify("Original game by Adrián Arroyo Calle");
 });
