@@ -3,7 +3,7 @@
 */
 
 Physijs.scripts.worker="libs/physijs_worker.js";
-Physijs.scripts.ammo="libs/ammo.js";
+Physijs.scripts.ammo="ammo.js";
 
 
 require.config({
@@ -11,13 +11,13 @@ require.config({
 });
 
 requirejs(["audio"],function(audio){
-	audio.start();
+	/*audio.start(); FOR DEBUG */
 });
 requirejs(["msg","three"],function(msg,three){
 	three.init();
 	three.startScreen();
 	msg.notify("Original game by Adrián Arroyo Calle");
 	setTimeout(function(){
-		three.start()
-	},5000);
+		this.start()
+	}.bind(three),5000);
 });
