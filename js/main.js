@@ -1,7 +1,10 @@
 /*
 * main.js
 */
-
+function deg2rad(deg)
+{
+	return deg*Math.PI/180;
+}
 Physijs.scripts.worker="libs/physijs_worker.js";
 Physijs.scripts.ammo="ammo.js";
 
