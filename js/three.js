@@ -21,7 +21,6 @@ define({
 		var delta=this.clock.getDelta();
 		requestAnimationFrame(this.loop.bind(this));
 		this.scene.simulate();
-		console.log(this.mesh.floor);
 		this.mesh.cube.rotation.x += delta*1;
 		this.mesh.cube.rotation.y += delta*1;
 		this.renderer.render(this.scene,this.camera);
@@ -33,7 +32,6 @@ define({
 		this.light.position.set(0.0,-1.0,0.0);
 		this.mesh.floor.position.set(0.0,-1.0,0.0);
 		this.mesh.floor.rotation.x=deg2rad(270);
-		this.mesh.floor.__dirtyRotation=true;
 		
 		this.scene.add(this.light)
 		this.scene.add(this.ambient);

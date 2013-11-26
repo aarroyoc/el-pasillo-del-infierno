@@ -23,4 +23,5 @@ requirejs(["msg","three"],function(msg,three){
 	setTimeout(function(){
 		this.start()
 	}.bind(three),5000);
+	document.getElementById("scope").style.visibility="visible";
 });
