@@ -27,7 +27,6 @@ requirejs(["msg","three","translations"],function(msg,three,trans){
 	three.startScreen();
 	msg.notify(trans[lang].original);
 	setTimeout(function(){
-		this.start()
+		this.start();
 	}.bind(three),5000);
-	document.getElementById("scope").style.visibility="visible";
 });

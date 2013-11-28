@@ -1,6 +1,6 @@
 /* translations.js */
 
-var translations = {
+define({
   en:  { 
 		hello: "Hello, World!",
 		bye:   "Goodbye!",
@@ -11,4 +11,4 @@ var translations = {
 		bye:   "¡Adiós!",
 		original: "Juego original de Adrián Arroyo Calle"
        }
-};
+});
