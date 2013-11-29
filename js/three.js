@@ -16,6 +16,7 @@ define({
 	ambient: new THREE.AmbientLight(0x550000),
 	light: new THREE.DirectionalLight(0xffffff,0.5),
 	clock: new THREE.Clock(),
+	skybox: new THREE.Mesh(new THREE.CubeGeometry(100,100,100),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/sky.jpg"), side: THREE.BackSide})),
 	mesh: {
 		cube: new THREE.Mesh(new THREE.CubeGeometry(2,2,2),new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true})),
 		floor: new Physijs.PlaneMesh(new THREE.PlaneGeometry(100,100), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/floor.jpg")}),0),
@@ -102,12 +103,14 @@ define({
 		leftWall.rotation.y=deg2rad(90);
 		rightWall.position.set(-10.0,-3.0,0.0);
 		rightWall.rotation.y=deg2rad(270);
+		this.skybox.position.set(0.0,0.0,0.0);
 		
-		this.scene.add(this.light);
-		this.scene.add(this.ambient);
 		this.scene.add(this.mesh.floor);
+		this.scene.add(this.skybox);
 		this.scene.add(leftWall);
 		this.scene.add(rightWall);
+		this.scene.add(this.light);
+		this.scene.add(this.ambient);
 	},
 	startScreen: function()
 	{
