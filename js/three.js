@@ -5,6 +5,7 @@ define({
 	keys:{
 		LEFT: false,
 		RIGHT: false,
+		BACK: false,
 		SPACE: false,
 		ESC: false,
 		R: false
@@ -13,7 +14,7 @@ define({
 	scene: new Physijs.Scene(),
 	renderer: new THREE.WebGLRenderer(),
 	ambient: new THREE.AmbientLight(0x550000),
-	light: new THREE.DirectionalLight(0x000000,0.5),
+	light: new THREE.DirectionalLight(0xffffff,0.5),
 	clock: new THREE.Clock(),
 	mesh: {
 		cube: new THREE.Mesh(new THREE.CubeGeometry(2,2,2),new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true})),
@@ -38,15 +39,21 @@ define({
 			if(this.camera.position.x < 9.5)
 				this.camera.position.x += 0.5;
 		}
+		/*if(this.keys.BACK==true)
+		{
+			this.camera.position.z += 0.5;
+		}*/
 		if(this.keys.SPACE==true)
 		{
-			var bala=Object.create(this.mesh.bullet);
+			var bala=new Physijs.BoxMesh(new THREE.CubeGeometry(.2,.2,.2),new THREE.MeshBasicMaterial({color: 0xffffff}));
 			bala.position.set(this.camera.position.x,this.camera.position.y, this.camera.position.z);
+			bala.setCcdMotionThreshold(.2);
+			bala.setCcdSweptSphereRadius(.1);
 			this.scene.add(bala);
-			bala.setLinearVelocity(new THREE.Vector3(0.0,0.0,5.0));
+			bala.setLinearVelocity(new THREE.Vector3(0.0,3.0,-10.0));
 			bala.addEventListener("collision",function(other_obj,relative_velocity,relative_rotation,contact_normal){
-				console.log("COLLISION!");
-			});
+				this.scene.remove(bala);
+			}.bind(this));
 		}
 		var delta=this.clock.getDelta();
 		requestAnimationFrame(this.loop.bind(this));
@@ -66,6 +73,8 @@ define({
 				case 68:
 				case 39:this.keys.RIGHT=true;break;
 				case 32:this.keys.SPACE=true;break;
+				case 83:
+				case 40:this.keys.BACK=true;break;
 			}
 		}.bind(this));
 		window.addEventListener("keyup",function(event){
@@ -77,6 +86,8 @@ define({
 				case 68:
 				case 39:this.keys.RIGHT=false;break;
 				case 32:this.keys.SPACE=false;break;
+				case 83:
+				case 40:this.keys.BACK=false;break;
 			}
 		}.bind(this));
 		/* Remove previous */
@@ -92,7 +103,7 @@ define({
 		rightWall.position.set(-10.0,-3.0,0.0);
 		rightWall.rotation.y=deg2rad(270);
 		
-		this.scene.add(this.light)
+		this.scene.add(this.light);
 		this.scene.add(this.ambient);
 		this.scene.add(this.mesh.floor);
 		this.scene.add(leftWall);
