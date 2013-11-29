@@ -19,7 +19,8 @@ define({
 		cube: new THREE.Mesh(new THREE.CubeGeometry(2,2,2),new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true})),
 		floor: new Physijs.PlaneMesh(new THREE.PlaneGeometry(100,100), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/floor.jpg")}),0),
 		fridge: new Physijs.BoxMesh(new THREE.CubeGeometry(1,2,1), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/fridge.png")}),10),
-		wall: new Physijs.PlaneMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0)
+		wall: new Physijs.PlaneMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
+		bullet: new Physijs.BoxMesh(new THREE.CubeGeometry(1,1,1),new THREE.MeshBasicMaterial({color: 0xffffff}))
 	},
 	init: function()
 	{
@@ -36,6 +37,16 @@ define({
 		{
 			if(this.camera.position.x < 9.5)
 				this.camera.position.x += 0.5;
+		}
+		if(this.keys.SPACE==true)
+		{
+			var bala=Object.create(this.mesh.bullet);
+			bala.position.set(this.camera.position.x,this.camera.position.y, this.camera.position.z);
+			this.scene.add(bala);
+			bala.setLinearVelocity(new THREE.Vector3(0.0,0.0,5.0));
+			bala.addEventListener("collision",function(other_obj,relative_velocity,relative_rotation,contact_normal){
+				console.log("COLLISION!");
+			});
 		}
 		var delta=this.clock.getDelta();
 		requestAnimationFrame(this.loop.bind(this));
