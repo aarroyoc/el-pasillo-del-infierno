@@ -22,7 +22,7 @@ require.config({
 });
 
 requirejs(["audio"],function(audio){
-	/*audio.start(); FOR DEBUG */
+	audio.start(); /*FOR DEBUG */
 });
 requirejs(["webgl"],function(webgl){
 	if(webgl.checkWebGL()==false)
