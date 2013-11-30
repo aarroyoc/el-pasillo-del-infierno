@@ -10,7 +10,7 @@ define({
 		ESC: false,
 		R: false
 	},
-	points: 1,
+	points: 0,
 	camera: new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,1,100),
 	scene: new Physijs.Scene(),
 	renderer: new THREE.WebGLRenderer(),
@@ -22,9 +22,11 @@ define({
 		cube: new THREE.Mesh(new THREE.CubeGeometry(2,2,2),new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true})),
 		floor: new Physijs.PlaneMesh(new THREE.PlaneGeometry(100,100), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/floor.jpg")}),0),
 		fridge: new Physijs.BoxMesh(new THREE.CubeGeometry(1,2,1), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/fridge.png")}),10),
+		leftWall: new Physijs.BoxMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
+		rightWall: new Physijs.BoxMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
 		wall: new Physijs.PlaneMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
 		bullet: new Physijs.BoxMesh(new THREE.CubeGeometry(1,1,1),new THREE.MeshLambertMaterial({color: 0xffffff})),
-		line: new Physijs.PlaneMesh(new THREE.PlaneGeometry(20,20), new THREE.MeshBasicMaterial({color: 0x000000, wireframe: true}))
+		line: new Physijs.BoxMesh(new THREE.CubeGeometry(20,20,1), new THREE.MeshBasicMaterial({color: 0x000000, wireframe: true}),0)
 	},
 	init: function()
 	{
@@ -42,10 +44,10 @@ define({
 			if(this.camera.position.x < 9.5)
 				this.camera.position.x += 0.5;
 		}
-		if(this.keys.BACK==true)
+		/*if(this.keys.BACK==true)
 		{
-			this.camera.position.z += 0.5; /* Only on DEBUG*/
-		}
+			this.camera.position.z += 0.5; // Only on DEBUG
+		}*/
 		if(this.keys.SPACE==true)
 		{
 			var bala=new Physijs.BoxMesh(new THREE.CubeGeometry(.2,.2,.2),new THREE.MeshBasicMaterial({color: 0xffffff}));
@@ -65,6 +67,13 @@ define({
 		this.mesh.cube.rotation.x += delta*1;
 		this.mesh.cube.rotation.y += delta*1;
 		this.renderer.render(this.scene,this.camera);
+	},
+	endGame: function()
+	{
+		requirejs(["msg"],function(msg){
+			msg.send("Game Over. Score: "+this.points);
+		}.bind(this));
+		this.scene=new Physijs.Scene();
 	},
 	start: function(){
 		/* Key listener */
@@ -95,6 +104,7 @@ define({
 			}
 		}.bind(this));
 		/* Remove previous */
+		this.scene.setGravity(0.0,-10.0,0.0);
 		this.scene.remove(this.mesh.cube);
 		/* Load a the game 3D*/
 		this.light.position.set(0.0,-1.0,0.0);
@@ -107,8 +117,12 @@ define({
 		rightWall.position.set(-10.0,-3.0,0.0);
 		rightWall.rotation.y=deg2rad(270);
 		this.skybox.position.set(0.0,0.0,0.0);
-		this.mesh.line.position.set(0.0,0.0,5.0);
-		this.mesh.line.line=true;
+		this.mesh.line.position.set(0.0,0.0,12.0);
+		this.mesh.line.wall=true;
+		this.mesh.line.addEventListener("collision",function(obj){
+			this.scene.remove(obj);
+			this.endGame();
+		}.bind(this));
 		
 		this.scene.add(this.mesh.floor);
 		this.scene.add(this.skybox);
@@ -118,47 +132,27 @@ define({
 		this.scene.add(this.light);
 		this.scene.add(this.ambient);
 	},
-	endGame: function()
-	{
-		requirejs(["msg"],function(msg){
-			msg.send("Game Over. Score: "+this.points);
-		});
-		this.scene=new THREE.Scene();
-	},
 	putFridges: function(){
-		with(Math){
-			var rnd=random();
-			console.log(rnd);
-			if(rnd>0.5)
-			{
-				rnd+=1.0;
-				rnd*this.points/1000;
-				var intrnd=floor(rnd);
-				console.log(intrnd);
-				for(var i=0;i<intrnd.length;i++)
+		var rnd=Math.random();
+		rnd*this.points/1000;
+		rnd+=1.0;
+		var intrnd=Math.floor(rnd);
+		for(var i=0;i<intrnd;i++)
+		{
+			var fridge=new Physijs.BoxMesh(new THREE.CubeGeometry(2,4,2), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/fridge.png")}),10);
+			fridge.position.set(0.0,0.0,-10.0);
+			fridge.setLinearVelocity(new THREE.Vector3(0.0,0.0,0.0));
+			fridge.addEventListener("collision",function(obj){
+				if(obj.infierno != undefined && obj.infierno==true)
 				{
-					var fridge=new Physijs.BoxMesh(new THREE.CubeGeometry(1,2,1), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/fridge.png")}),10);
-					fridge.setLinearVelocity(0.0,0.0,25.0+this.points/1000);
-					fridge.position.set(0.0,0.0,-30.0);
-					fridge.addEventListener("collision",function(obj){
-						console.log("Fridge removed");
-						if(obj.infierno != undefined)
-						{
-							this.scene.remove(fridge);
-							this.points+=100;
-							console.log("Points are:"+this.points);
-						}else if(obj.line != undefined)
-						{
-							this.scene.remove(fridge);
-							this.endGame();
-						}
-					});
-					fridge.addEventListener("ready",function(){
-						console.log("Fridge ready "+fridge);
-					});
-					this.scene.add(fridge);
+					this.scene.remove(fridge);
+					this.points+=100;
 				}
-			}
+			}.bind(this));
+			fridge.addEventListener("ready",function(){
+				fridge.setLinearVelocity(new THREE.Vector3(0.0,0.0,5.0));
+			});
+			this.scene.add(fridge);
 		}
 	},
 	startScreen: function()
