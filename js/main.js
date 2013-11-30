@@ -12,7 +12,7 @@ Physijs.scripts.worker="libs/physijs_worker.js";
 Physijs.scripts.ammo="ammo.js";
 
 var lang=navigator.language.split("-");
-if(lang!="en" || lang!="es")
+if(lang!="en" && lang!="es")
 {
 	lang="en";
 }
@@ -41,6 +41,17 @@ requirejs(["msg","three","translations"],function(msg,three,trans){
 		msg.notify(trans[lang].original);
 		setTimeout(function(){
 			this.start();
+			msg.notify(trans[lang].round+" 1");
+			setInterval(function(){
+				this.putFridges();
+			}.bind(three),2000);
 		}.bind(three),5000);
+		while(1)
+		{
+			if(three.points%1000==0)
+			{
+				msg.notify(trans[lang].round+" "+points/1000);
+			}
+		}
 	}
 });

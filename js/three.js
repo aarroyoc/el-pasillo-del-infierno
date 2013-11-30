@@ -10,6 +10,7 @@ define({
 		ESC: false,
 		R: false
 	},
+	points: 1,
 	camera: new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,1,100),
 	scene: new Physijs.Scene(),
 	renderer: new THREE.WebGLRenderer(),
@@ -22,7 +23,8 @@ define({
 		floor: new Physijs.PlaneMesh(new THREE.PlaneGeometry(100,100), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/floor.jpg")}),0),
 		fridge: new Physijs.BoxMesh(new THREE.CubeGeometry(1,2,1), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/fridge.png")}),10),
 		wall: new Physijs.PlaneMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
-		bullet: new Physijs.BoxMesh(new THREE.CubeGeometry(1,1,1),new THREE.MeshBasicMaterial({color: 0xffffff}))
+		bullet: new Physijs.BoxMesh(new THREE.CubeGeometry(1,1,1),new THREE.MeshLambertMaterial({color: 0xffffff})),
+		line: new Physijs.PlaneMesh(new THREE.PlaneGeometry(20,20), new THREE.MeshBasicMaterial({color: 0x000000, wireframe: true}))
 	},
 	init: function()
 	{
@@ -52,6 +54,7 @@ define({
 			bala.setCcdSweptSphereRadius(.1);
 			this.scene.add(bala);
 			bala.setLinearVelocity(new THREE.Vector3(0.0,3.0,-10.0));
+			bala.infierno=true;
 			bala.addEventListener("collision",function(other_obj,relative_velocity,relative_rotation,contact_normal){
 				this.scene.remove(bala);
 			}.bind(this));
@@ -104,13 +107,52 @@ define({
 		rightWall.position.set(-10.0,-3.0,0.0);
 		rightWall.rotation.y=deg2rad(270);
 		this.skybox.position.set(0.0,0.0,0.0);
+		this.mesh.line.position.set(-10.0,0.0,1.0);
+		this.mesh.line.line=true;
 		
 		this.scene.add(this.mesh.floor);
 		this.scene.add(this.skybox);
 		this.scene.add(leftWall);
 		this.scene.add(rightWall);
+		this.scene.add(this.mesh.line);
 		this.scene.add(this.light);
 		this.scene.add(this.ambient);
+	},
+	endGame: function()
+	{
+		requirejs(["msg"],function(msg){
+			msg.send("Game Over. Score: "+this.points);
+		});
+		this.scene=new THREE.Scene();
+	},
+	putFridges: function(){
+		with(Math){
+			var rnd=random();
+			if(rnd>0.5)
+			{
+				rnd+=1.0;
+				rnd*this.points/1000;
+				var intrnd=floor(rnd);
+				for(var i=0;i<intrnd.length;i++)
+				{
+					var fridge=new Physijs.BoxMesh(new THREE.CubeGeometry(1,2,1), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/fridge.png")}),10);
+					fridge.setLinearVelocity(0.0,0.0,-25.0-this.points/1000);
+					fridge.position.set(0.0,0.0,30.0);
+					fridge.addEventListener("collision",function(obj){
+						if(obj.infierno != undefined)
+						{
+							this.scene.remove(fridge);
+							this.points+=100;
+						}else if(obj.line != undefined)
+						{
+							this.scene.remove(fridge);
+							this.endGame();
+						}
+					});
+					this.scene.add(fridge);
+				}
+			}
+		}
 	},
 	startScreen: function()
 	{
