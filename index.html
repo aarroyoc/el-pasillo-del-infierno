@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="el-pasillo-del-infierno.appcache">
 <head>
 	<title>El Pasillo del Infierno</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/index.css">
+	<script src="http://coinwidget.com/widget/coin.js"></script>
+	<meta name="application-name" content="El Pasillo del Infierno"/>
+	<meta name="msapplication-TileColor" content="#550000"/>
+	<meta name="msapplication-square70x70logo" content="icons/tiny.png"/>
+	<meta name="msapplication-square150x150logo" content="icons/square.png"/>
+	<meta name="msapplication-wide310x150logo" content="icons/wide.jpg"/>
+	<meta name="msapplication-square310x310logo" content="icons/large.jpg"/>
+	<link rel="apple-touch-icon" href="icons/square.png">
+	<link rel="apple-touch-startup-image" href="icons/wide.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
 	<em>Current status: 1.0</em>
 	<h1>El Pasillo del Infierno</h1>
 	<h2>The revenge of the fridges</h2>
-	<p></p> <!-- Social Widgets -->
+	<p><div class="g-plusone"></div><iframe src="https://www.facebook.com/plugins/like.php?api_key=113869198637480&channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D28%23cb%3Df3969e5de9288be%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff2a56d13199f3a8%26relation%3Dparent.parent&colorscheme=light&extended_social_context=false&href=http%3A%2F%2Fadrianarroyocalle.github.io%2Fel-pasillo-del-infierno&layout=button_count&locale=es_ES&node_type=link&sdk=joey&share=false&show_faces=false&width=90" style="wdith: 90px;overflow: hidden; border: none;"></iframe> <!-- Google+ -->
+	<div><a href="http://www.tuenti.com/share" id="tuenti_share" class="tuenti-share-button"></a></div><div><a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a></div></p>
 	<!-- <h3><a href="index.es.html">Spanish</a></h3> --> <!-- Spanish, French, German -->
 	<iframe style="border: 0; width: 728px; height: 90px;overflow: hidden;" src="http://coinurl.com/get.php?id=18740"></iframe> <!-- Ads -->
 	<p class="button">
 		<a href="game.html">Start playing</a> <!-- Play-->
 	</p>
 	<p>El Pasillo del Infierno is a place where you can find the horrors of the fridges</p> <!-- Description -->
+	<p>Move with A and D or left key and right key and shot with the space bar. If the fridges passed your position, you lose</p>
+	<div>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_donations">
+				<input type="hidden" name="business" value="soresnes@gmail.com">
+				<input type="hidden" name="lc" value="US">
+				<input type="hidden" name="item_name" value="El Pasillo del Infierno">
+				<input type="hidden" name="no_note" value="0">
+				<input type="hidden" name="currency_code" value="EUR">
+				<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+		</form>
+	</div>
+	<script>
+	CoinWidgetCom.go({
+		wallet_address: "1A2j8CwiFEhQ4Uycsjhr3gQPbJxFk1LRmM"
+		, currency: "bitcoin"
+		, counter: "count"
+		, alignment: "bl"
+		, qrcode: true
+		, auto_show: false
+		, lbl_button: "Donate"
+		, lbl_address: "My Bitcoin Address:"
+		, lbl_count: "donations"
+		, lbl_amount: "BTC"
+	});
+	</script>
 	<!-- <iframe></iframe> YouTube -->
 	<div id="disqus_thread"></div>
     <p>
@@ -43,5 +82,28 @@
 		<li><a href="http://opengameart.org">OpenGameArt</a> - Some textures</li>
 		<li><a href="http://google.com/?q=Andrey_Avkhimovich">Andrey Avkhimovich</a> - Music</li>
 	</ul>
+	<script type="text/javascript">
+	(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	</script>
+	<script type="text/javascript">
+	(function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'http://widgets.tuenti.com/widgets.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-20035972-20', 'adrianarroyocalle.github.io');
+	ga('send', 'pageview');
+	</script>
 </body>
 </html>
