@@ -1,6 +1,7 @@
 body{
 	text-align: center;
-	background-image: url();
+	background-image: url("../img/El Pasillo del Infierno.png");
+	color: white;
 }
 .button{
 	border-style: ridge;
