@@ -46,12 +46,16 @@ requirejs(["msg","three","translations"],function(msg,three,trans){
 				this.putFridges();
 			}.bind(three),2000);
 		}.bind(three),5000);
-		while(1)
+		setInterval(function()
 		{
-			if(three.points%1000==0)
+			if(this.points%1000==0)
 			{
-				msg.notify(trans[lang].round+" "+points/1000);
+				var pox=this.points/1000;
+				requirejs(["msg"],function(msg){
+					msg.notify(trans[lang].round+" "+pox);
+				});
+				
 			}
-		}
+		}.bind(three),500);
 	}
 });
