@@ -1,10 +1,10 @@
 {
   "name": "El Pasillo del Infierno",
   "description": "El Pasillo del Infierno: The revenge of the fridges. El Pasillo del Infierno is a place where you can find the horrors of the fridges",
-  "version": "1",
+  "version": "1.0",
   "app": {
     "urls": [
-      "*://adrianarroyocalle.github.io/el-pasillo-del-infierno/",
+      "*://adrianarroyocalle.github.io/el-pasillo-del-infierno/"
     ],
     "launch": {
       "web_url": "http://adrianarroyocalle.github.io/el-pasillo-del-infierno"
@@ -13,5 +13,6 @@
   "icons": {
     "128": "icons/tiny.png"
   },
-  "offline_enabled" : "true"
+  "offline_enabled" : true,
+  "manifest_version" : 2
 }
