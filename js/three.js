@@ -150,7 +150,7 @@ define({
 				}
 			}.bind(this));
 			fridge.addEventListener("ready",function(){
-				fridge.setLinearVelocity(new THREE.Vector3(0.0,0.0,5.0));
+				fridge.setLinearVelocity(new THREE.Vector3(0.0,0.0,10.0));
 			});
 			this.scene.add(fridge);
 		}

@@ -59,3 +59,15 @@ requirejs(["msg","three","translations"],function(msg,three,trans){
 		}.bind(three),500);
 	}
 });
+document.body.addEventListener("click",function(){
+ if (!document.fullscreenElement &&    // alternative standard method
+      !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+    if (document.body.requestFullscreen) {
+      document.body.requestFullscreen();
+    } else if (document.body.mozRequestFullScreen) {
+      document.body.mozRequestFullScreen();
+    } else if (document.body.webkitRequestFullscreen) {
+      document.body.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  }
+ });
