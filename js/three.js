@@ -71,7 +71,7 @@ define({
 	endGame: function()
 	{
 		requirejs(["msg"],function(msg){
-			msg.send("Game Over. Score: "+this.points);
+			msg.send("Game Over. Score: "+this.points+". Press R to restart");
 		}.bind(this));
 		this.scene=new Physijs.Scene();
 	},
@@ -88,6 +88,7 @@ define({
 				case 32:this.keys.SPACE=true;break;
 				case 83:
 				case 40:this.keys.BACK=true;break;
+				case 82:window.location.reload();break;
 			}
 		}.bind(this));
 		window.addEventListener("keyup",function(event){
