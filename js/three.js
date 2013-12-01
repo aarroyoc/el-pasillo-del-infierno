@@ -103,6 +103,39 @@ define({
 				case 40:this.keys.BACK=false;break;
 			}
 		}.bind(this));
+		/* Touch Listener*/
+		window.addEventListener("touchstart",function(evt){
+			var touches = evt.changedTouches;
+			for (var i=0; i < touches.length; i++) {
+				if(touches[i].pageX < window.innerWidth/2) //LEFT
+				{
+					this.keys.LEFT=true;
+					this.keys.SPACE=true;
+				}
+				if(touches[i].pageX > window.innerWidth/2) //Right
+				{
+					this.keys.RIGHT=true;
+					this.keys.SPACE=true;
+				}
+			}
+		
+		});
+		window.addEventListener("touchend",function(evt){
+			var touches = evt.changedTouches;
+			for (var i=0; i < touches.length; i++) {
+				if(touches[i].pageX < window.innerWidth/2) //LEFT
+				{
+					this.keys.LEFT=false;
+					this.keys.SPACE=false;
+				}
+				if(touches[i].pageX > window.innerWidth/2) //Right
+				{
+					this.keys.RIGHT=false;
+					this.keys.SPACE=false;
+				}
+			}
+		
+		});
 		/* Remove previous */
 		this.scene.setGravity(0.0,-10.0,0.0);
 		this.scene.remove(this.mesh.cube);
@@ -150,7 +183,7 @@ define({
 				}
 			}.bind(this));
 			fridge.addEventListener("ready",function(){
-				fridge.setLinearVelocity(new THREE.Vector3(0.0,0.0,10.0));
+				fridge.setLinearVelocity(new THREE.Vector3(0.0,0.0,7.5));
 			});
 			this.scene.add(fridge);
 		}
