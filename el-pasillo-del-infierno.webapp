@@ -1,0 +1,24 @@
+{
+  "name": "El Pasillo del Infierno",
+  "description": "El Pasillo del Infierno: The revenge of the fridges. El Pasillo del Infierno is a place where you can find the horrors of the fridges",
+  "launch_path": "/el-pasillo-del-infierno/index.html",
+  "icons": {
+    "128": "/el-pasillo-del-infierno/icons/tiny.png"
+  },
+  "developer": {
+    "name": "Adrián Arroyo Calle",
+    "url": "http://plus.google.com/+AdriánArroyoCalle"
+  },
+  "default_locale": "en",
+  "appcache_path" : "/el-pasillo-del-infierno/el-pasillo-del-infierno.appcache",
+  "fullscreen" : "true",
+  "locales" : {
+	"es" : {
+		"description" : "El Pasillo del Infierno: La venganza de los frigoríficos. El Pasillo del Infierno es el lugar donde podrás encontrar los horrores de los frigoríficos"
+	
+	}
+  },
+  "orientation" : ["landscape"],
+  "type" : "web",
+  "version" : "1.0"
+}
