@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="ElPasilloDelInfierno.svg"
+   inkscape:export-filename="/home/julian/el-pasillo-del-infierno/icons/ElPasilloDelInfierno_192.png"
+   inkscape:export-xdpi="270"
+   inkscape:export-ydpi="270">
+  <defs
+     id="defs2987">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-3.1760185 : 34.636141 : 1"
+       inkscape:vp_y="6.2210048e-14 : 1016.0007 : 0"
+       inkscape:vp_z="53.135574 : 33.86814 : 1"
+       inkscape:persp3d-origin="32.640451 : 21.394436 : 1"
+       id="perspective2993" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.5"
+     inkscape:cx="32"
+     inkscape:cy="38.456716"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="1360"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <g
+       sodipodi:type="inkscape:box3d"
+       style="fill:#000080;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="g2995"
+       inkscape:perspectiveID="#perspective2993"
+       inkscape:corner0="0.26940606 : 0.035479784 : 0 : 1"
+       inkscape:corner7="-0.098074522 : -0.01402103 : -4.4798088 : 1">
+      <path
+         sodipodi:type="inkscape:box3dside"
+         id="path3005"
+         style="fill:#afafde;fill-rule:evenodd;stroke:none"
+         inkscape:box3dsidetype="13"
+         d="M 25.039121,51.017357 36.5351,59.839859 57.32028,22.642962 64.245024,21.873651 z" />
+      <path
+         sodipodi:type="inkscape:box3dside"
+         id="path2997"
+         style="fill:#353564;fill-rule:evenodd;stroke:none"
+         inkscape:box3dsidetype="6"
+         d="m 25.039121,11.39815 0,39.619207 39.205903,-29.143706 0,15.665593 z" />
+      <path
+         sodipodi:type="inkscape:box3dside"
+         id="path3001"
+         style="fill:#8686bf;fill-rule:evenodd;stroke:none"
+         inkscape:box3dsidetype="3"
+         d="M 25.039121,11.39815 36.5351,4.0781997 l 0,55.7616593 -11.495979,-8.822502 z" />
+      <path
+         sodipodi:type="inkscape:box3dside"
+         id="path2999"
+         style="fill:#4d4d9f;fill-rule:evenodd;stroke:none"
+         inkscape:box3dsidetype="5"
+         d="M 25.039121,11.39815 36.5351,4.0781997 57.32028,36.699559 l 6.924744,0.839685 z" />
+      <path
+         sodipodi:type="inkscape:box3dside"
+         id="path3003"
+         style="fill:#d7d7ff;fill-rule:evenodd;stroke:none"
+         inkscape:box3dsidetype="14"
+         d="m 36.5351,4.0781997 0,55.7616593 20.78518,-37.196897 0,14.056597 z" />
+      <path
+         sodipodi:type="inkscape:box3dside"
+         id="path3007"
+         style="fill:#e9e9ff;fill-rule:evenodd;stroke:none"
+         inkscape:box3dsidetype="11"
+         d="m 64.245024,37.539244 -6.924744,-0.839685 0,-14.056597 6.924744,-0.769311 z" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:-0.43px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Purisa;-inkscape-font-specification:Purisa"
+       x="1.4545455"
+       y="8"
+       id="text3034"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3036"
+         x="1.4545455"
+         y="8">El Pasillo del Infierno</tspan></text>
+    <path
+       style="fill:#800000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path3060"
+       d="m 9.848154,11.513333 c 0.218459,0.500365 0.527239,0.952765 0.747757,1.452769 0.232742,0.316593 0.364667,0.682977 0.529679,1.034244 0.145404,0.351899 0.295866,0.704779 0.477746,1.039916 0.103604,0.417353 0.395207,0.734233 0.597203,1.103684 0.03582,0.03828 0.07164,0.07656 0.107459,0.114843 0.03293,0.05131 0.05908,0.107671 0.0988,0.153927 0.02798,0.03258 0.07654,0.0444 0.1015,0.07934 0.09966,0.139546 0.204797,0.393843 0.283397,0.55018 0.26413,0.41574 0.59116,0.72178 0.944736,1.057968 0.287271,0.242986 0.532077,0.536848 0.820414,0.77815 0.530726,0.444151 -0.128213,-0.172143 0.377853,0.313901 0.445434,0.358629 0.889358,0.711247 1.350447,1.049886 0.467709,0.300132 0.966606,0.542615 1.430882,0.848471 0.471681,0.201047 0.899844,0.476831 1.381375,0.661117 0.08047,0.02257 0.165831,0.03205 0.241414,0.06773 0.08489,0.04006 0.151766,0.111422 0.234021,0.156656 0.325745,0.179138 0.141358,0.03221 0.473947,0.178561 0.60533,0.266372 -0.141814,0.0062 0.430605,0.193736 0.07004,0.01552 0.142976,0.02132 0.210129,0.04657 0.529636,0.199133 -0.110513,0.02532 0.371303,0.17438 0.190542,0.05895 0.308125,0.04377 0.497266,0.131184 0.189517,0.151075 0.419074,0.140841 0.640125,0.196279 0.260694,0.06538 0.506602,0.153188 0.772256,0.205244 0.570762,0.235547 1.14286,0.457452 1.741029,0.613451 0.558748,0.233231 1.152152,0.319244 1.75185,0.352241 0.410516,0.01261 0.821122,-0.0036 1.23165,-0.0075 -14.393158,0.0053 -10.32691,0.01103 -7.266573,-0.004 0.340018,-0.03581 0.670284,0.06198 1.003734,-0.0013 0.04009,0.0054 0.0803,0.0226 0.120263,0.01631 0.05565,-0.0088 0.104483,-0.04239 0.157961,-0.06011 0.122314,-0.04053 0.252437,-0.05599 0.373038,-0.101364 0.122684,-0.04616 0.23525,-0.115762 0.35433,-0.170553 0.308295,-0.180223 0.633737,-0.316434 0.893479,-0.565978 0.256982,-0.198493 0.502055,-0.425776 0.769117,-0.609035 0.215949,-0.167133 0.393954,-0.404045 0.617149,-0.556727 0,0 8.618463,0.653042 8.618463,0.653042 l 0,0 c -0.29491,0.414437 0.07796,-0.0722 -0.195329,0.194525 -0.04069,0.03971 -0.06132,0.09703 -0.102111,0.136633 -0.03084,0.02994 -0.07787,0.03913 -0.109221,0.06853 -0.283628,0.266045 0.04993,0.03695 -0.234722,0.216868 -0.341247,0.387249 0.07596,-0.05788 -0.25565,0.221524 -0.100724,0.08487 -0.147062,0.187838 -0.255106,0.265593 -0.03964,0.02853 -0.09254,0.03367 -0.133658,0.06003 -0.04641,0.02974 -0.08425,0.0711 -0.126373,0.106646 -0.319918,0.223578 -0.54979,0.574674 -0.935543,0.707819 -0.05949,0.04112 -0.118985,0.08223 -0.178478,0.123351 -0.05978,0.03128 -0.122473,0.05752 -0.179327,0.09384 -0.06495,0.0415 -0.119168,0.0986 -0.1849,0.138844 -0.69142,0.423366 0.254853,-0.18822 -0.319359,0.125944 -0.0541,0.0296 -0.09704,0.07614 -0.145558,0.114204 -0.173126,0.03703 -0.343173,0.134689 -0.488271,0.165667 -0.179936,0.03842 -0.38301,-0.03088 -0.564616,-2.91e-4 -3.241258,8.5e-5 -6.482162,0.07836 -9.723717,0.0031 -0.410075,-0.0053 -0.821024,-0.02429 -1.224229,-0.105636 -0.580187,-0.122589 -1.136127,-0.318344 -1.700008,-0.498931 -0.595125,-0.203236 -1.184866,-0.43247 -1.800989,-0.564432 -0.492299,-0.150565 -0.986655,-0.28831 -1.469964,-0.462748 -0.368954,-0.0769 -0.694794,-0.303917 -1.051908,-0.420778 -0.442859,-0.22854 -0.905668,-0.414838 -1.357184,-0.622598 C 10.127301,22.480385 9.6439361,22.257032 9.2019811,21.960724 8.7179757,21.682918 8.2455986,21.386453 7.8113259,21.034151 7.3249176,20.668775 6.823451,20.320158 6.3823848,19.899338 5.9788103,19.542917 5.6119054,19.145407 5.2168076,18.779465 4.8330528,18.392841 4.4904187,17.970133 4.2140039,17.49905 4.0080666,17.198899 3.7755806,16.922605 3.6106967,16.595611 3.3812472,16.225039 3.1942562,15.836747 3.0129912,15.44106 2.8450018,15.08419 2.6769272,14.727436 2.5225838,14.364366 2.3714414,14.015119 2.1731858,13.689119 2.0322722,13.334978 1.8099965,12.873977 1.555906,12.419986 1.2349256,12.020377 c 0,0 8.6132284,-0.507044 8.6132284,-0.507044 z"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#800000;stroke:#800000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 19.454545,20.909091 16.363637,2 -7.090909,-8.545455 z"
+       id="path3066"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
