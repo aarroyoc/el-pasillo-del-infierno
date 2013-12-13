@@ -167,14 +167,15 @@ define({
 		this.scene.add(this.ambient);
 	},
 	putFridges: function(){
-		var rnd=Math.random();
+		var pos=Math.floor(Math.random()*20)-10; //Position of fridges
+		var rnd=Math.random(); //Number of fridges
 		rnd*this.points/1000;
 		rnd+=1.0;
 		var intrnd=Math.floor(rnd);
 		for(var i=0;i<intrnd;i++)
 		{
 			var fridge=new Physijs.BoxMesh(new THREE.CubeGeometry(2,4,2), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/fridge.png")}),10);
-			fridge.position.set(0.0,0.0,-10.0);
+			fridge.position.set(pos,0.0,-10.0);
 			fridge.setLinearVelocity(new THREE.Vector3(0.0,0.0,0.0));
 			fridge.addEventListener("collision",function(obj){
 				if(obj.infierno != undefined && obj.infierno==true)
