@@ -22,8 +22,8 @@ define({
 		cube: new THREE.Mesh(new THREE.CubeGeometry(2,2,2),new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true})),
 		floor: new Physijs.PlaneMesh(new THREE.PlaneGeometry(100,100), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/floor.jpg")}),0),
 		fridge: new Physijs.BoxMesh(new THREE.CubeGeometry(1,2,1), new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/fridge.png")}),10),
-		leftWall: new Physijs.BoxMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
-		rightWall: new Physijs.BoxMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
+		leftWall: new Physijs.BoxMesh(new THREE.CubeGeometry(0.1,25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
+		rightWall: new Physijs.BoxMesh(new THREE.CubeGeometry(0.1,25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
 		wall: new Physijs.PlaneMesh(new THREE.PlaneGeometry(25,10),new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture("img/wall.jpg"), side: THREE.DoubleSide}),0),
 		bullet: new Physijs.BoxMesh(new THREE.CubeGeometry(1,1,1),new THREE.MeshLambertMaterial({color: 0xffffff})),
 		line: new Physijs.BoxMesh(new THREE.CubeGeometry(20,20,1), new THREE.MeshBasicMaterial({color: 0x000000, wireframe: true}),0)
