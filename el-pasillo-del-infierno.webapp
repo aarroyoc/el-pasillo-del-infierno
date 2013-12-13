@@ -1,9 +1,9 @@
 {
   "name": "El Pasillo del Infierno",
   "description": "El Pasillo del Infierno: The revenge of the fridges. El Pasillo del Infierno is a place where you can find the horrors of the fridges",
-  "launch_path": "/el-pasillo-del-infierno/index.html",
+  "launch_path": "/el-pasillo-del-infierno/",
   "icons": {
-    "128": "/el-pasillo-del-infierno/icons/tiny.png"
+    "128": "/el-pasillo-del-infierno/icons/ElPasilloDelInfierno_128.png"
   },
   "developer": {
     "name": "Adrián Arroyo Calle",
@@ -20,5 +20,5 @@
   },
   "orientation" : ["landscape"],
   "type" : "web",
-  "version" : "1.0"
+  "version" : "1.1"
 }
